@@ -49,7 +49,6 @@ def password_strength(password):
             st.info(message)
         elif "❗" in message:
             st.warning(message)
-        # st.write(message)
 
 # Streamlit UI setup
 st.set_page_config(page_title="Password Strength Checker", page_icon="🔒")
