@@ -29,27 +29,22 @@ def password_strength(password):
     else:
         messages.append("❌ Password should contain at least one special character (!@#$%^&*).")
     
+    # Display messages in the Streamlit UI
+    if messages:
+        st.write("---")
+        st.markdown("##### *Improvement Suggestions:*")
+        st.write("---")
+    for message in messages:
+        st.write(message)
+
     # Final score checking
     if score == 4:
-        messages.append("✅ Password is strong.")
+        st.success("✅ Password is strong.")
     elif score == 3:
-        messages.append("🟡 Password is medium, try adding more security features.")
+        st.info("🟡 Password is medium, try adding more security features.")
     else:
-        messages.append("❗ Password is weak, try adding more security features.")
+        st.error("❗ Password is weak, try adding more security features.")
     
-    # Display messages in the Streamlit UI
-    st.markdown("***Improvement Suggestions.....***")
-
-    for message in messages:
-        if "❌" in message:
-            st.error(message)
-        elif "✅" in message:
-            st.success(message)
-        elif "🟡" in message:
-            st.info(message)
-        elif "❗" in message:
-            st.warning(message)
-
 # Streamlit UI setup
 st.set_page_config(page_title="Password Strength Checker", page_icon="🔒")
 st.title("🔒 Password Strength Checker")
