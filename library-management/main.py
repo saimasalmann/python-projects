@@ -100,3 +100,18 @@ elif menu == "Save and Exit":
     st.success("✅ Library saved successfully!")
     st.balloons()
     st.stop()
+
+st.markdown(
+    """
+    <hr>
+    <p style=' font-size: 14px; color: green;'>
+        🚀 This is a <b>Streamlit</b> 
+ project made by <b>SAIMA</b>.
+    </p>
+    """,
+    
+    unsafe_allow_html=True
+
+)
+st.image("https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png", width=100)
+
